@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scout/Scenes/SampleScene.unity
+- path: Assets/Pierre/SceneP/photoNiveau.unity
   isLoaded: 1
   isActive: 1
