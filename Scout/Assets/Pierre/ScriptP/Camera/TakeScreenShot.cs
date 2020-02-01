@@ -12,6 +12,8 @@ public class TakeScreenShot : MonoBehaviour
     public bool isTakingScreenShot;
     private int numberPhoto;
 
+    public List<string> animalTaken = new List<string>();
+
     private void Awake()
     {
         instance = this;
@@ -42,15 +44,13 @@ public class TakeScreenShot : MonoBehaviour
 
     public void TakePhoto(int height, int width, int depthbuffer)
     {
-
-
         myCamera.targetTexture = RenderTexture.GetTemporary(width, height, depthbuffer);
         isTakingScreenShot = true;
     }
 
     public void Update()
     {
-        if (Input.GetAxis("Fire1") > 0)
+        if (Input.GetMouseButtonUp(0))
         {
             TakePhoto(myCamera.pixelHeight, myCamera.pixelHeight, 16);
         }

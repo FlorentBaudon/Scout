@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33425965b12dad14981f0d2b4212826b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partiCapturer: Baleine
   scoreGiven: 2
   Fieldstandardview: 60
   distanceVector: 30
@@ -183,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33425965b12dad14981f0d2b4212826b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partiCapturer: Baleine
   scoreGiven: 5
   Fieldstandardview: 60
   distanceVector: 30
@@ -276,6 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33425965b12dad14981f0d2b4212826b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partiCapturer: Baleine
   scoreGiven: 1
   Fieldstandardview: 60
   distanceVector: 30
@@ -375,4 +378,6 @@ MonoBehaviour:
   pivotMonster: {fileID: 0}
   speedMove: 10
   distanceObjectif: 0
-  patternToChoose: turn
+  patternToChoose: ignore
+  AnimalName: 
+  objectifsPhoto: []
