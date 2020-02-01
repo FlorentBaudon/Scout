@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
@@ -55,7 +56,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
-            m_MouseLook.SetCursorLock(false);
         }
 
 
@@ -81,9 +81,37 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MoveDir.y = 0f;
             }
 
+            // Bit shift the index of the layer (8) to get a bit mask
+            int layerMask = 9;
+
+            // This would cast rays only against colliders in layer 8.
+            // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
+            layerMask = ~layerMask;
+
+            RaycastHit hit;
+            // Does the ray intersect any objects excluding the player layer
+            if (Physics.Raycast(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
+            {
+                Prod hitObject = hit.transform.gameObject.GetComponent<Prod>();
+                if (hitObject.isBroken && CrossPlatformInputManager.GetButtonDown("Fire1"))
+                {
+                    StartCoroutine(Repairs(hitObject, 5));
+                }
+                Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            }
+            else
+            {
+                Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward) * 1000, Color.white);
+            }
+
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
 
+        private IEnumerator Repairs (Prod module, float time)
+        {
+            yield return new WaitForSeconds(time);
+            module.repairProd();
+        }
 
         private void PlayLandingSound()
         {
