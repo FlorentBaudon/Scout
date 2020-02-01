@@ -1,6 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+public class PowerEvent : UnityEvent<float>
+{
+
+}
 
 public class ShipManager : MonoBehaviour
 {
@@ -8,7 +14,68 @@ public class ShipManager : MonoBehaviour
     public Prod waterProd;
     public Prod airProd;
 
+    public float waterPowerConsumption = 5;
+    public float airPowerConsumption = 5;
+
+    float totalPowerConsumption = 0;
+
+    public float waterProdAmount = 1;
+    public float airProdAmount = 1;
+
+    public PowerEvent powerEvent = new PowerEvent();
+
+    float timeElapsed = 0;
+    public float timeTriggerRandom = 3;
+
+    List<Prod> producerList;
+
+    private void Start()
+    {
+        waterProd.powerConsumption = waterPowerConsumption;
+        airProd.powerConsumption = airPowerConsumption;
+
+        totalPowerConsumption += waterPowerConsumption;
+        totalPowerConsumption += airPowerConsumption;
+
+        powerProd.amountRate = totalPowerConsumption * 1.5f;
+        waterProd.amountRate = waterProdAmount;
+        airProd.amountRate = airProdAmount;
+
+        producerList = new List<Prod> { powerProd, waterProd, airProd };
+    }
+
     private void Update()
+    {
+        powerProd.storage.getFromStorage(totalPowerConsumption);
+        //generateEvent();
+        powerEvent.Invoke(powerProd.storage.getAmount());
+        testProd();
+
+
+    }
+
+    void generateEvent()
+    {
+        timeElapsed += Time.deltaTime;
+
+        if (timeElapsed >= timeTriggerRandom)
+        {
+            timeElapsed = 0;
+            int randomBreak = Random.Range(0, 10) % 3;
+            if (randomBreak == 0)
+            {
+                int randomProd = Random.Range(0, producerList.Count);
+                Prod p = producerList[randomProd];
+                if (!p.isBroken)
+                {
+                    p.breakProd();
+                    Debug.Log(p);
+                }
+            }
+        }
+    }
+
+    void testProd ()
     {
         if (Input.GetKeyUp(KeyCode.Keypad4))
         {
