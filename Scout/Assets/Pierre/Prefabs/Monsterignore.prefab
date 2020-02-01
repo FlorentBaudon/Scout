@@ -292,7 +292,7 @@ GameObject:
   - component: {fileID: 8610128660166490775}
   - component: {fileID: 8610128660166490770}
   m_Layer: 0
-  m_Name: Monster
+  m_Name: Monsterignore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -375,4 +375,4 @@ MonoBehaviour:
   pivotMonster: {fileID: 0}
   speedMove: 10
   distanceObjectif: 0
-  patternToChoose: ignore
+  patternToChoose: turn
