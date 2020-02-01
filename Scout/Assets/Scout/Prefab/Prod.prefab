@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   storage: {fileID: 0}
-  amountRate: 10
+  amountRate: 1
   isBroken: 0
   particle: {fileID: 2930293939568518108}
 --- !u!198 &2930293939568518108
