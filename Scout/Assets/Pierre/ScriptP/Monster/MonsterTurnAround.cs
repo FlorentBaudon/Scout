@@ -6,11 +6,11 @@ public class MonsterTurnAround : MonsterMoveBase
 {
     public override void Appear(Monster monster)
     {
-        monster.transform.Translate(monster.transform.right * Time.deltaTime * monster.speedMove);
+        monster.pivotMonster = TakeScreenShot.instance.gameObject.transform.position;
     }
     public override void Move(Monster monster)
     {
-        monster.transform.LookAt(monster.pivotMonster.transform);
-        monster.transform.Translate(monster.transform.right * Time.deltaTime * monster.speedMove);
+        monster.transform.LookAt(monster.pivotMonster);
+        monster.transform.Translate(new Vector3(1,Random.Range(0.1f,-0.1f), Random.Range(0, -1f)) * Time.deltaTime * monster.speedMove);
     }
 }

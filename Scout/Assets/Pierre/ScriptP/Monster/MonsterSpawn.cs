@@ -20,7 +20,9 @@ public class MonsterSpawn : MonoBehaviour
 
     public void Spawn()
     {
-        Instantiate(MonsterToSpawn[Random.Range(0, MonsterToSpawn.Length-1)], (/*(Random.insideUnitSphere*sphereSize)+*/spawnSphere[Random.Range(0,spawnSphere.Length)-1].position),Quaternion.identity);
+        Vector3 rotation = new Vector3(Random.Range(-15, 15),  Random.Range(-15, 15), Random.Range(-15, 15));
+
+        GameObject SpawnMonster = Instantiate(MonsterToSpawn[Random.Range(0, MonsterToSpawn.Length)], (spawnSphere[Random.Range(0,spawnSphere.Length-1)].position), Quaternion.Euler(rotation));
 
         Invoke("Spawn", Random.Range(ApparitionMin, ApparitionMax));
     }

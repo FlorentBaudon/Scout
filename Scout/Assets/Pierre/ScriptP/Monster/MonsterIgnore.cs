@@ -6,11 +6,11 @@ public class MonsterIgnore : MonsterMoveBase
 {
     public override void Move(Monster monster)
     {
-        monster.transform.Translate(Time.deltaTime*monster.speedMove*-Vector3.right);
+        monster.transform.Translate(Time.deltaTime*monster.speedMove*monster.pivotMonster,Space.World);
     }
 
     public override void Appear(Monster monster)
     {
-        monster.transform.rotation= Quaternion.Euler(Random.Range(-15, 15),180+Random.Range(-15,15), Random.Range(-15, 15));
+        monster.pivotMonster = monster.transform.forward;
     }
 }
