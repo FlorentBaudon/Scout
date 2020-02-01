@@ -109,7 +109,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     {
                         StartCoroutine(Repairs(hitObject, 5));
                     }
-
                 }
                 Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             }

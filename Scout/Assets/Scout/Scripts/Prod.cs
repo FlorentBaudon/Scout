@@ -1,6 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+public class BoolEvent : UnityEvent<bool>
+{
+}
 
 public class Prod : MonoBehaviour
 {
@@ -10,8 +15,9 @@ public class Prod : MonoBehaviour
     [HideInInspector]
     public float powerConsumption = 0; //set to 0 for power production
     public bool isBroken = false;
-    public ParticleSystem particle;
+    public ParticleSystem[] particles;
 
+    public BoolEvent breakEvent = new BoolEvent();
 
     public void addToStorage()
     {
@@ -23,20 +29,21 @@ public class Prod : MonoBehaviour
 
     public void breakProd ()
     {
-        Debug.Log("break");
         this.isBroken = true;
-        if (particle)
+        breakEvent.Invoke(true);
+        foreach(ParticleSystem ps in particles)
         {
-            particle.Play();
+            ps.Play();
         }
     }
 
     public void repairProd ()
     {
         this.isBroken = false;
-        if (particle)
+        breakEvent.Invoke(false);
+        foreach (ParticleSystem ps in particles)
         {
-            particle.Stop();
+            ps.Stop();
         }
     }
 
@@ -44,7 +51,4 @@ public class Prod : MonoBehaviour
     {
         addToStorage();
     }
-
-    //Setter
-
 }

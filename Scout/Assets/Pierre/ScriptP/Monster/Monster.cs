@@ -5,22 +5,55 @@ using UnityEngine;
 public class Monster : MonoBehaviour
 {
     [SerializeField]
-    MonsterTurnAround patternMoving;
+    IMonsterMove patternMoving;
 
-    public GameObject pivotMonster;
+    public Vector3 pivotMonster;
 
     public float speedMove, distanceObjectif;
 
+    public string patternToChoose;
+
+    public string AnimalName;
+
+    public float timeToDie=15;
+
+    public ObjectifCapture[] objectifsPhoto;
+
     public void Start()
     {
+        switch (patternToChoose)
+        {
+            case ("turn"):
+                patternMoving = MonsterMoveBase.MONSTER_TURNAROUND;
+                break;
+            case ("ignore"):
+                patternMoving = MonsterMoveBase.MONSTER_IGNORE;
+                break;
+            default:
+                patternMoving = MonsterMoveBase.MONSTER_IGNORE;
+                break;
+        }
+
+
         patternMoving.Appear(this);
-        Invoke("killYourself", 8);
+        Invoke("killYourself", 15);
     }
 
     // Update is called once per frame
     void Update()
     {
         patternMoving.Move(this);
+    }
+
+    public void giveScore()
+    {
+        foreach (ObjectifCapture objectif in objectifsPhoto)
+        {
+            if (true)
+            {
+
+            }
+        }
     }
 
     void killYourself()
