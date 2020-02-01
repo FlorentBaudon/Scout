@@ -99,11 +99,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // Does the ray intersect any objects excluding the player layer
             if (Physics.Raycast(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward), out hit, distanceMaxRayCast, layerMask))
             {
-                if (hit.transform.gameObject.CompareTag("Ladder"))
+                if(hit.transform.gameObject.CompareTag("a_reparer"))
                 {
-                } else if(hit.transform.gameObject.CompareTag("a_reparer"))
-                {
-                    
                     Prod hitObject = hit.transform.gameObject.GetComponent<Prod>();
                     if (hitObject.isBroken && CrossPlatformInputManager.GetButtonDown("Fire1"))
                     {
@@ -293,7 +290,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 return;
             }
-            body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
+
+            body.AddForceAtPosition(m_CharacterController.velocity * 0.1f, hit.point, ForceMode.Impulse);
         }
     }
 }

@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Manager
   - a_reparer
-  - Ladder
   layers:
   - Default
   - TransparentFX
