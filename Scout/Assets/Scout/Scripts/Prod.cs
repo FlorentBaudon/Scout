@@ -5,7 +5,10 @@ using UnityEngine;
 public class Prod : MonoBehaviour
 {
     public Storage storage;
-    public float amountRate = 10;
+    [HideInInspector]
+    public float amountRate = 0;
+    [HideInInspector]
+    public float powerConsumption = 0; //set to 0 for power production
     public bool isBroken = false;
     public ParticleSystem particle;
 
@@ -14,7 +17,7 @@ public class Prod : MonoBehaviour
     {
         if (!this.isBroken)
         {
-            this.storage.addToStorage(this.amountRate * Time.deltaTime);
+            this.storage.addToStorage(this.amountRate);
         }
     }
 
@@ -41,4 +44,7 @@ public class Prod : MonoBehaviour
     {
         addToStorage();
     }
+
+    //Setter
+
 }

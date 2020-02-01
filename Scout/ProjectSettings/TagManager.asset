@@ -4,7 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - a_reparer
+  - Manager
   layers:
   - Default
   - TransparentFX

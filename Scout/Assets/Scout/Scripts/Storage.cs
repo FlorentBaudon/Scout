@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Storage : MonoBehaviour
 {
-    public float amount = 100;
+    [SerializeField]
+    float amount = 100;
     private Gauge gauge;
 
     private void Start()
@@ -14,7 +15,7 @@ public class Storage : MonoBehaviour
 
     public void addToStorage (float amountRate)
     {
-        this.amount += amountRate;
+        this.amount += amountRate * Time.deltaTime;
         this.amount = Mathf.Clamp(this.amount, 0, 100);
         gauge.setValue(this.amount);
     }
@@ -24,9 +25,11 @@ public class Storage : MonoBehaviour
         return this.amount;
     }
 
-    public float getFromStorage(float amountRate)
+    public void getFromStorage(float amountRate)
     {
-        this.amount -= amountRate;
-        return amountRate;
+        Debug.Log(this.amount + " - " + amountRate);
+        this.amount -= amountRate * Time.deltaTime;
+        this.amount = Mathf.Clamp(this.amount, 0, 100);
+        gauge.setValue(this.amount);
     }
 }
