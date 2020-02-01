@@ -33,7 +33,7 @@ public class TakeScreenShot : MonoBehaviour
             renderResult.ReadPixels(rect, 0, 0);
 
             byte[] byteArray = renderResult.EncodeToPNG();
-            System.IO.File.WriteAllBytes(Application.dataPath + "/Pierre/ScreenShot/photoMonster" + numberPhoto + ".png", byteArray);
+            System.IO.File.WriteAllBytes(Application.dataPath + "/Resource/ScreenShot/photoMonster" + numberPhoto + ".png", byteArray);
             numberPhoto++;
             Debug.Log("Saved camera png");
 
