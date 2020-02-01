@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scout/Scenes/SampleScene.unity
+- path: Assets/Scout/Scenes/ShipTest.unity
   isLoaded: 1
   isActive: 1
