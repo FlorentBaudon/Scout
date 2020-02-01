@@ -85,6 +85,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MoveDir.y = 0f;
             }
 
+            m_PreviouslyGrounded = m_CharacterController.isGrounded;
+
+            //RAYCASTING
             // Bit shift the index of the layer (8) to get a bit mask
             int layerMask = 9;
 
@@ -96,10 +99,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // Does the ray intersect any objects excluding the player layer
             if (Physics.Raycast(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward), out hit, distanceMaxRayCast, layerMask))
             {
-                Prod hitObject = hit.transform.gameObject.GetComponent<Prod>();
-                if (hitObject.isBroken && CrossPlatformInputManager.GetButtonDown("Fire1"))
+                if (hit.transform.gameObject.CompareTag("Ladder"))
                 {
-                    StartCoroutine(Repairs(hitObject, 5));
+                } else if(hit.transform.gameObject.CompareTag("a_reparer"))
+                {
+                    
+                    Prod hitObject = hit.transform.gameObject.GetComponent<Prod>();
+                    if (hitObject.isBroken && CrossPlatformInputManager.GetButtonDown("Fire1"))
+                    {
+                        StartCoroutine(Repairs(hitObject, 5));
+                    }
+
                 }
                 Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             }
@@ -107,8 +117,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward) * 1000, Color.white);
             }
-
-            m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
 
         private IEnumerator Repairs (Prod module, float time)
