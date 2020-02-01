@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/Florent/Flo_Scene.unity
-  isLoaded: 1
-  isActive: 1
