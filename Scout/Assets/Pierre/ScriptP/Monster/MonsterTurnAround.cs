@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterTurnAround : MonoBehaviour
+public class MonsterTurnAround : MonsterMoveBase
 {
-    public void Move(Monster monster)
+    public override void Appear(Monster monster)
     {
-        monster.transform.Translate(Time.deltaTime*monster.speedMove*-Vector3.forward);
+        monster.transform.Translate(monster.transform.right * Time.deltaTime * monster.speedMove);
     }
-
-    public void Appear(Monster monster)
+    public override void Move(Monster monster)
     {
-
+        monster.transform.LookAt(monster.pivotMonster.transform);
+        monster.transform.Translate(monster.transform.right * Time.deltaTime * monster.speedMove);
     }
 }

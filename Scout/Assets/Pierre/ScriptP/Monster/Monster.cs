@@ -5,14 +5,30 @@ using UnityEngine;
 public class Monster : MonoBehaviour
 {
     [SerializeField]
-    MonsterTurnAround patternMoving;
+    IMonsterMove patternMoving;
 
     public GameObject pivotMonster;
 
     public float speedMove, distanceObjectif;
 
+    public string patternToChoose;
+
     public void Start()
     {
+        switch (patternToChoose)
+        {
+            case ("turn"):
+                patternMoving = MonsterMoveBase.MONSTER_TURNAROUND;
+                break;
+            case ("ignore"):
+                patternMoving = MonsterMoveBase.MONSTER_IGNORE;
+                break;
+            default:
+                patternMoving = MonsterMoveBase.MONSTER_IGNORE;
+                break;
+        }
+
+
         patternMoving.Appear(this);
         Invoke("killYourself", 8);
     }
