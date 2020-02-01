@@ -760,8 +760,9 @@ MonoBehaviour:
   airProd: {fileID: 541322632}
   waterPowerConsumption: 1
   airPowerConsumption: 1
+  airConsumption: 1
   waterProdAmount: 1
-  airProdAmount: 1
+  airProdAmount: 2
   timeTriggerRandom: 10
 --- !u!4 &410568390
 Transform:
@@ -1533,55 +1534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18637ba7510b2744a923257eddf0e480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shipManager: {fileID: 0}
 --- !u!114 &1192009869 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2930293939568518110, guid: 7df5c32a53aeff44aabc8a01bd81e096,
