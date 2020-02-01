@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+public class BoolEvent : UnityEvent<bool>
+{
+}
+
 public class Prod : MonoBehaviour
 {
     public Storage storage;
@@ -12,6 +16,8 @@ public class Prod : MonoBehaviour
     public float powerConsumption = 0; //set to 0 for power production
     public bool isBroken = false;
     public ParticleSystem[] particles;
+
+    public BoolEvent breakEvent = new BoolEvent();
 
     public void addToStorage()
     {
@@ -24,6 +30,7 @@ public class Prod : MonoBehaviour
     public void breakProd ()
     {
         this.isBroken = true;
+        breakEvent.Invoke(true);
         foreach(ParticleSystem ps in particles)
         {
             ps.Play();
@@ -33,6 +40,7 @@ public class Prod : MonoBehaviour
     public void repairProd ()
     {
         this.isBroken = false;
+        breakEvent.Invoke(false);
         foreach (ParticleSystem ps in particles)
         {
             ps.Stop();
