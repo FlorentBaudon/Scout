@@ -92,10 +92,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // Does the ray intersect any objects excluding the player layer
             if (Physics.Raycast(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
             {
+
                 Prod hitObject = hit.transform.gameObject.GetComponent<Prod>();
                 if (hitObject.isBroken && CrossPlatformInputManager.GetButtonDown("Fire1"))
                 {
-                    StartCoroutine(Repairs(hitObject, 5));
+                    StartCoroutine(Repairs(hitObject, 1));
                 }
                 Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             }
