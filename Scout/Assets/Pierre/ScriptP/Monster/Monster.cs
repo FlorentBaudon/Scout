@@ -7,7 +7,6 @@ public class Monster : MonoBehaviour
     [SerializeField]
     MonsterTurnAround patternMoving;
 
-
     public GameObject pivotMonster;
 
     public float speedMove, distanceObjectif;
@@ -15,11 +14,17 @@ public class Monster : MonoBehaviour
     public void Start()
     {
         patternMoving.Appear(this);
+        Invoke("killYourself", 8);
     }
 
     // Update is called once per frame
     void Update()
     {
         patternMoving.Move(this);
+    }
+
+    void killYourself()
+    {
+        Destroy(gameObject);
     }
 }
