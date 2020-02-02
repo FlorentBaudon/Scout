@@ -31,6 +31,8 @@ public class ShipManager : MonoBehaviour
 
     List<Prod> producerList;
 
+    public AudioClip brokenSound;
+
     private void Start()
     {
         waterProd.powerConsumption = waterPowerConsumption;
@@ -74,6 +76,8 @@ public class ShipManager : MonoBehaviour
                 if (!p.isBroken)
                 {
                     p.breakProd();
+                    Vector3 pos = GameObject.FindGameObjectWithTag("Player").transform.position;
+                    AudioSource.PlayClipAtPoint(brokenSound, pos, 1.0f);
                     Debug.Log(p);
                 }
             }
@@ -84,6 +88,8 @@ public class ShipManager : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Keypad4))
         {
+            Vector3 pos = GameObject.FindGameObjectWithTag("Player").transform.position;
+            AudioSource.PlayClipAtPoint(brokenSound, pos, 1.0f);
             powerProd.breakProd();
         }
         if (Input.GetKeyUp(KeyCode.Keypad1))
