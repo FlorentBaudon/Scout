@@ -645,8 +645,8 @@ MonoBehaviour:
     - {fileID: 1349427514}
     - {fileID: 948531561}
     rEuler: {x: 0, y: 180, z: 0}
-  ApparitionMin: 0.5
-  ApparitionMax: 1
+  ApparitionMin: 2
+  ApparitionMax: 5
   sphereSize: 2
 --- !u!1 &756340589
 GameObject:
