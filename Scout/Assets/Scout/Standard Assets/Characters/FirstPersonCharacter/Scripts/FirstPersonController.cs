@@ -44,6 +44,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private AudioSource m_AudioSource;
 
         public float distanceMaxRayCast;
+        public GameObject siegeSphere;
 
         // Use this for initialization
         private void Start()
@@ -60,6 +61,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_MouseLook.Init(transform , m_Camera.transform);
 
             distanceMaxRayCast = 7;
+            siegeSphere.SetActive(false);
         }
 
 
@@ -71,6 +73,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (!m_Jump)
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+            }
+
+            if (CrossPlatformInputManager.GetButtonDown("Submit") && siegeSphere.activeSelf)
+            {
+                siegeSphere.SetActive(false);
+                m_Camera.enabled = true;
             }
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
@@ -106,6 +114,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     {
                         StartCoroutine(Repairs(hitObject, 5));
                     }
+                }else if (hit.transform.gameObject.CompareTag("Siege"))
+                {
+                    m_Camera.enabled = false;
+                    siegeSphere.SetActive(true);
                 }
                 Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             }
