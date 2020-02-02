@@ -19,6 +19,11 @@ public class Vital : MonoBehaviour
         {
             health -= (5.0f * Time.deltaTime);
         }
+
+        if(health == 0)
+        {
+            shipManager.GameOver();
+        }
     }
 
     // Update is called once per frame

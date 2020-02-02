@@ -109,4 +109,9 @@ public class ShipManager : MonoBehaviour
             airProd.repairProd();
         }
     }
+
+    public void GameOver()
+    {
+
+    }
 }
