@@ -16,7 +16,11 @@ public class MenuController : MonoBehaviour
 
     public void RevenirMenuPrincipal()
     {
-        Debug.Log("ALLLOOOOOO ???");
         SceneManager.LoadScene("MenuPrincipal", LoadSceneMode.Single);
+    }
+
+    public void EnleverPause()
+    {
+        this.enabled = false;
     }
 }

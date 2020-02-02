@@ -45,6 +45,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         public float distanceMaxRayCast;
         public GameObject siegeSphere;
+        public Canvas menu;
 
         // Use this for initialization
         private void Start()
@@ -79,6 +80,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 siegeSphere.SetActive(false);
                 m_Camera.enabled = true;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                menu.enabled = true;
             }
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
