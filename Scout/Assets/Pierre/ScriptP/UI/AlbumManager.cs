@@ -5,12 +5,22 @@ using UnityEngine.UI;
 
 public class AlbumManager : MonoBehaviour
 {
-    public Image photo;
+    public GameObject panel;
 
-    public void ImportImage()
+    public RawImage[] rawImageCollection;
+    public Text[] TextScore;
+
+    public void Update()
     {
-        Sprite sprite = Resources.Load < Sprite >("photoMonster"+0+".png");
-
-        photo.sprite = sprite;
-    }
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            if (panel.activeSelf)
+            {
+                panel.SetActive(false);
+            }
+            else
+            {
+                panel.SetActive(true);
+            }
+        }    }
 }
