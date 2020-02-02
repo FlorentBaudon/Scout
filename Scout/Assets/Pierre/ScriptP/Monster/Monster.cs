@@ -45,19 +45,12 @@ public class Monster : MonoBehaviour
         patternMoving.Move(this);
     }
 
-    public void giveScore()
-    {
-        foreach (ObjectifCapture objectif in objectifsPhoto)
-        {
-            if (true)
-            {
-
-            }
-        }
-    }
-
     void killYourself()
     {
+        foreach (ObjectifCapture point in objectifsPhoto)
+        {
+            TakeScreenShot.instance.AnimalInGame.Remove(point);
+        }
         Destroy(gameObject);
     }
 }

@@ -19,6 +19,8 @@ public class Prod : MonoBehaviour
 
     public BoolEvent breakEvent = new BoolEvent();
 
+    public AudioClip repairSound;
+
     public void addToStorage()
     {
         if (!this.isBroken)
@@ -45,6 +47,8 @@ public class Prod : MonoBehaviour
         {
             ps.Stop();
         }
+        Vector3 pos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        AudioSource.PlayClipAtPoint(repairSound, pos, 1.0f);
     }
 
     private void Update()

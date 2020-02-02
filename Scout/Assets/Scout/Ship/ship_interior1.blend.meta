@@ -12,6 +12,21 @@ ModelImporter:
     100012: //RootNode
     100014: table
     100016: teleport
+    100018: chair_o
+    100020: console
+    100022: teleport_k
+    100024: teleport_k.001
+    100026: tree
+    100028: treehouse
+    100030: armories
+    100032: capsule
+    100034: engine
+    100036: teleport_m
+    100038: teleport_o
+    100040: teleport_r
+    100042: chair_c
+    100044: command
+    100046: teleport_c
     400000: bed
     400002: cockpit
     400004: kitchen
@@ -21,6 +36,21 @@ ModelImporter:
     400012: //RootNode
     400014: table
     400016: teleport
+    400018: chair_o
+    400020: console
+    400022: teleport_k
+    400024: teleport_k.001
+    400026: tree
+    400028: treehouse
+    400030: armories
+    400032: capsule
+    400034: engine
+    400036: teleport_m
+    400038: teleport_o
+    400040: teleport_r
+    400042: chair_c
+    400044: command
+    400046: teleport_c
     2100000: No Name
     2300000: bed
     2300002: cockpit
@@ -30,6 +60,21 @@ ModelImporter:
     2300010: room
     2300012: table
     2300014: teleport
+    2300016: chair_o
+    2300018: console
+    2300020: teleport_k
+    2300022: teleport_k.001
+    2300024: tree
+    2300026: treehouse
+    2300028: armories
+    2300030: capsule
+    2300032: engine
+    2300034: teleport_m
+    2300036: teleport_o
+    2300038: teleport_r
+    2300040: chair_c
+    2300042: command
+    2300044: teleport_c
     3300000: bed
     3300002: cockpit
     3300004: kitchen
@@ -38,6 +83,21 @@ ModelImporter:
     3300010: room
     3300012: table
     3300014: teleport
+    3300016: chair_o
+    3300018: console
+    3300020: teleport_k
+    3300022: teleport_k.001
+    3300024: tree
+    3300026: treehouse
+    3300028: armories
+    3300030: capsule
+    3300032: engine
+    3300034: teleport_m
+    3300036: teleport_o
+    3300038: teleport_r
+    3300040: chair_c
+    3300042: command
+    3300044: teleport_c
     4300000: cockpit
     4300002: room
     4300004: table
@@ -46,6 +106,21 @@ ModelImporter:
     4300010: machinery
     4300012: kitchen
     4300014: observatory
+    4300016: console
+    4300018: treehouse
+    4300020: tree
+    4300022: teleport_k
+    4300024: chair_o
+    4300026: teleport_k.001
+    4300028: teleport_r
+    4300030: armories
+    4300032: teleport_m
+    4300034: engine
+    4300036: capsule
+    4300038: teleport_o
+    4300040: command
+    4300042: chair_c
+    4300044: teleport_c
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:

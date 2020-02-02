@@ -112,7 +112,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     Prod hitObject = hit.transform.gameObject.GetComponent<Prod>();
                     if (hitObject.isBroken && CrossPlatformInputManager.GetButtonDown("Fire1"))
                     {
-                        StartCoroutine(Repairs(hitObject, 5));
+                        StartCoroutine(Repairs(hitObject, 1));
                     }
                 }else if (hit.transform.gameObject.CompareTag("Siege"))
                 {
