@@ -15,7 +15,7 @@ MonoBehaviour:
   partiCapturer: baleine
   scoreGiven: 30
   Fieldstandardview: 60
-  distanceVector: 30
+  distanceVector: 60
 --- !u!1 &8610128660166490773
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,6 +168,18 @@ PrefabInstance:
     - target: {fileID: 400024, guid: 4584f95c01fb873449825a6924335e37, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400024, guid: 4584f95c01fb873449825a6924335e37, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400024, guid: 4584f95c01fb873449825a6924335e37, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400024, guid: 4584f95c01fb873449825a6924335e37, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 4584f95c01fb873449825a6924335e37, type: 3}
       propertyPath: m_Controller
