@@ -43,6 +43,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        public float distanceMaxRayCast;
+        public GameObject siegeSphere;
+
         // Use this for initialization
         private void Start()
         {
@@ -56,6 +59,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jumping = false;
             m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
+
+            distanceMaxRayCast = 7;
+            siegeSphere.SetActive(false);
         }
 
 
@@ -67,6 +73,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (!m_Jump)
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
+            }
+
+            if (CrossPlatformInputManager.GetButtonDown("Submit") && siegeSphere.activeSelf)
+            {
+                siegeSphere.SetActive(false);
+                m_Camera.enabled = true;
             }
 
             if (!m_PreviouslyGrounded && m_CharacterController.isGrounded)
@@ -81,6 +93,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 m_MoveDir.y = 0f;
             }
 
+            m_PreviouslyGrounded = m_CharacterController.isGrounded;
+
+            //RAYCASTING
             // Bit shift the index of the layer (8) to get a bit mask
             int layerMask = 9;
 
@@ -90,12 +105,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             RaycastHit hit;
             // Does the ray intersect any objects excluding the player layer
-            if (Physics.Raycast(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, layerMask))
+            if (Physics.Raycast(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward), out hit, distanceMaxRayCast, layerMask))
             {
-                Prod hitObject = hit.transform.gameObject.GetComponent<Prod>();
-                if (hitObject.isBroken && CrossPlatformInputManager.GetButtonDown("Fire1"))
+                if(hit.transform.gameObject.CompareTag("a_reparer"))
                 {
-                    StartCoroutine(Repairs(hitObject, 5));
+                    Prod hitObject = hit.transform.gameObject.GetComponent<Prod>();
+                    if (hitObject.isBroken && CrossPlatformInputManager.GetButtonDown("Fire1"))
+                    {
+                        StartCoroutine(Repairs(hitObject, 5));
+                    }
+                }else if (hit.transform.gameObject.CompareTag("Siege"))
+                {
+                    m_Camera.enabled = false;
+                    siegeSphere.SetActive(true);
                 }
                 Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
             }
@@ -103,8 +125,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 Debug.DrawRay(m_Camera.transform.position, m_Camera.transform.TransformDirection(Vector3.forward) * 1000, Color.white);
             }
-
-            m_PreviouslyGrounded = m_CharacterController.isGrounded;
         }
 
         private IEnumerator Repairs (Prod module, float time)
@@ -282,7 +302,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 return;
             }
-            body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
+
+            body.AddForceAtPosition(m_CharacterController.velocity * 0.1f, hit.point, ForceMode.Impulse);
         }
     }
 }

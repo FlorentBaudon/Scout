@@ -27,7 +27,6 @@ public class Storage : MonoBehaviour
 
     public void getFromStorage(float amountRate)
     {
-        Debug.Log(this.amount + " - " + amountRate);
         this.amount -= amountRate * Time.deltaTime;
         this.amount = Mathf.Clamp(this.amount, 0, 100);
         gauge.setValue(this.amount);

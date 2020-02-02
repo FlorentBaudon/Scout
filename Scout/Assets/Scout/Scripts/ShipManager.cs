@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PowerEvent : UnityEvent<float>
+public class floatEvent : UnityEvent<float>
 {
-
 }
 
 public class ShipManager : MonoBehaviour
@@ -19,10 +18,13 @@ public class ShipManager : MonoBehaviour
 
     float totalPowerConsumption = 0;
 
-    public float waterProdAmount = 1;
-    public float airProdAmount = 1;
+    public float airConsumption = 1;
 
-    public PowerEvent powerEvent = new PowerEvent();
+    public float waterProdAmount = 1;
+    public float airProdAmount = 2;
+
+    public floatEvent powerEvent = new floatEvent();
+    public floatEvent airEvent = new floatEvent();
 
     float timeElapsed = 0;
     public float timeTriggerRandom = 3;
@@ -47,8 +49,11 @@ public class ShipManager : MonoBehaviour
     private void Update()
     {
         powerProd.storage.getFromStorage(totalPowerConsumption);
+        airProd.storage.getFromStorage(airConsumption);
         //generateEvent();
         powerEvent.Invoke(powerProd.storage.getAmount());
+        airEvent.Invoke(airProd.storage.getAmount());
+
         testProd();
 
 
