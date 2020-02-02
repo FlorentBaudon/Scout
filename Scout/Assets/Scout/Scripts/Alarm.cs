@@ -30,6 +30,8 @@ public class Alarm : MonoBehaviour
         {
             if(!audio.isPlaying)
                 audio.Play();
+
+            setLight(Color.red);
         }
         else
         {
@@ -42,7 +44,17 @@ public class Alarm : MonoBehaviour
             if (!isRepair)
             {
                 audio.Stop();
+                setLight(Color.white);
             }
+        }
+    }
+
+    public void setLight(Color c)
+    {
+        GameObject[] lights = GameObject.FindGameObjectsWithTag("AlarmLight");
+        foreach(GameObject l in lights)
+        {
+            l.GetComponent<Light>().color = c;
         }
     }
 }

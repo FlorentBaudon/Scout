@@ -50,7 +50,7 @@ public class ShipManager : MonoBehaviour
     {
         powerProd.storage.getFromStorage(totalPowerConsumption);
         airProd.storage.getFromStorage(airConsumption);
-        //generateEvent();
+        generateEvent();
         powerEvent.Invoke(powerProd.storage.getAmount());
         airEvent.Invoke(airProd.storage.getAmount());
 
