@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33425965b12dad14981f0d2b4212826b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  partiCapturer: meduse
-  scoreGiven: 10
+  partiCapturer: medusebaby
+  scoreGiven: 50
   Fieldstandardview: 60
   distanceVector: 30
 --- !u!114 &471225940574069720
@@ -427,11 +427,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1543763935773718231, guid: dc55dd34dbf3bf74aa906f1bade19921,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1543763935773718231, guid: dc55dd34dbf3bf74aa906f1bade19921,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1543763935773718231, guid: dc55dd34dbf3bf74aa906f1bade19921,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1543763935774010103, guid: dc55dd34dbf3bf74aa906f1bade19921,
         type: 3}
       propertyPath: m_Name
       value: jellyfish (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1543763935776011317, guid: dc55dd34dbf3bf74aa906f1bade19921,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 591bd6d771c9aee49b539237bfab551b, type: 2}
+    - target: {fileID: 1543763935776011319, guid: dc55dd34dbf3bf74aa906f1bade19921,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c2486360d752ac54b9e6a8ca3d010d11, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc55dd34dbf3bf74aa906f1bade19921, type: 3}
 --- !u!4 &7046090161206883637 stripped
