@@ -15,6 +15,7 @@ public class TeleporterTrigger : MonoBehaviour
 
             cc.enabled = false;
             perso.transform.position = target.position;
+            //perso.transform.Rotate(new Vector3(0, 180, 0), Space.Self); //TODO : Réparer ça, quand on se téléporte, il faut se retourner
             cc.enabled = true;
         }
     }

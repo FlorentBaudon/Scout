@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Manager
   - a_reparer
+  - Siege
   layers:
   - Default
   - TransparentFX
