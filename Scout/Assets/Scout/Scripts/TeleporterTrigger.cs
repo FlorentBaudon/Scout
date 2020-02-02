@@ -19,6 +19,8 @@ public class TeleporterTrigger : MonoBehaviour
             perso.GetComponent<Rigidbody>().velocity = Vector3.zero;
             //perso.transform.Rotate(new Vector3(0, 180, 0), Space.Self); //TODO : Réparer ça, quand on se téléporte, il faut se retourner
             cc.enabled = true;
+
+            GetComponent<AudioSource>().Play();
         }
     }
 }

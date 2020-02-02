@@ -24,6 +24,9 @@ ModelImporter:
     100036: teleport_m
     100038: teleport_o
     100040: teleport_r
+    100042: chair_c
+    100044: command
+    100046: teleport_c
     400000: bed
     400002: cockpit
     400004: kitchen
@@ -45,6 +48,9 @@ ModelImporter:
     400036: teleport_m
     400038: teleport_o
     400040: teleport_r
+    400042: chair_c
+    400044: command
+    400046: teleport_c
     2100000: No Name
     2300000: bed
     2300002: cockpit
@@ -66,6 +72,9 @@ ModelImporter:
     2300034: teleport_m
     2300036: teleport_o
     2300038: teleport_r
+    2300040: chair_c
+    2300042: command
+    2300044: teleport_c
     3300000: bed
     3300002: cockpit
     3300004: kitchen
@@ -86,6 +95,9 @@ ModelImporter:
     3300034: teleport_m
     3300036: teleport_o
     3300038: teleport_r
+    3300040: chair_c
+    3300042: command
+    3300044: teleport_c
     4300000: cockpit
     4300002: room
     4300004: table
@@ -106,6 +118,9 @@ ModelImporter:
     4300034: engine
     4300036: capsule
     4300038: teleport_o
+    4300040: command
+    4300042: chair_c
+    4300044: teleport_c
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:

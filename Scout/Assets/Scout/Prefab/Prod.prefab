@@ -118,6 +118,7 @@ MonoBehaviour:
   - {fileID: 1698698076805006900}
   - {fileID: 1724218126294502870}
   - {fileID: 7926366926992896574}
+  repairSound: {fileID: 8300000, guid: 6b115ab8668228e49b90a7e13bd75929, type: 3}
 --- !u!1001 &1525926154071524864
 PrefabInstance:
   m_ObjectHideFlags: 0
