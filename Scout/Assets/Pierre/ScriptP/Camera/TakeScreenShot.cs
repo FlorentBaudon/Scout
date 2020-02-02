@@ -14,6 +14,8 @@ public class TakeScreenShot : MonoBehaviour
 
     public List<string> animalTaken = new List<string>();
 
+    public List<int> pointPhotoTaken = new List<int>();
+
     private void Awake()
     {
         instance = this;
@@ -33,7 +35,7 @@ public class TakeScreenShot : MonoBehaviour
             renderResult.ReadPixels(rect, 0, 0);
 
             byte[] byteArray = renderResult.EncodeToPNG();
-            System.IO.File.WriteAllBytes(Application.dataPath + "/Pierre/ScreenShot/photoMonster" + numberPhoto + ".png", byteArray);
+            System.IO.File.WriteAllBytes(Application.dataPath + "/Resource/photoMonster" + numberPhoto + ".png", byteArray);
             numberPhoto++;
             Debug.Log("Saved camera png");
 
