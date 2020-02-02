@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1441970638408020698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1018868817413909140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33425965b12dad14981f0d2b4212826b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  partiCapturer: baleine
+  scoreGiven: 30
+  Fieldstandardview: 60
+  distanceVector: 30
 --- !u!1 &8610128660166490773
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +183,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8a66f81478fc7be4b8a0794423cba9ad, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4584f95c01fb873449825a6924335e37, type: 3}
+--- !u!1 &1018868817413909140 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100024, guid: 4584f95c01fb873449825a6924335e37,
+    type: 3}
+  m_PrefabInstance: {fileID: 1018868817413811244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1018868817413682868 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400024, guid: 4584f95c01fb873449825a6924335e37,
