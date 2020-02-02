@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class floatEvent : UnityEvent<float>
 {
@@ -118,6 +119,6 @@ public class ShipManager : MonoBehaviour
 
     public void GameOver()
     {
-
+        SceneManager.LoadScene("GameOver");
     }
 }
