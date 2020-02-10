@@ -52,6 +52,7 @@ ModelImporter:
     400044: command
     400046: teleport_c
     2100000: No Name
+    2100002: wall
     2300000: bed
     2300002: cockpit
     2300004: kitchen

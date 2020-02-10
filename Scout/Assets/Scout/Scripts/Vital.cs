@@ -19,6 +19,7 @@ public class Vital : MonoBehaviour
         {
             health -= (5.0f * Time.deltaTime);
         }
+        Debug.Log(health);
 
         if(health == 0)
         {

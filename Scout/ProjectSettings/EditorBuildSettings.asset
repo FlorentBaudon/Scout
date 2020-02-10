@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scout/Scenes/MenuPrincipal.unity
+    guid: 8b8a13b201afaf047a7a43c46c318b1f
+  - enabled: 1
+    path: Assets/Florent/MainScene.unity
+    guid: 27e23b73110feeb4abbd6f475ac807ff
+  - enabled: 1
+    path: Assets/Scout/Scenes/GameOver.unity
+    guid: 1cceb0c52f7079c4a9247aa2e057b51b
   m_configObjects: {}
